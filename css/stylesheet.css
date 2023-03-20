@@ -1,0 +1,166 @@
+body {
+    background-color: #f3e9de;
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+    margin: 0%;
+}
+
+li {
+    color: #256993
+}
+
+.dark-theme {
+    background-color: #222;
+}
+
+h1 {
+    color: #256993;
+}
+
+p {
+    padding: 7px;
+    color: #256993;
+}
+
+h2 {
+    color: #256993
+}
+
+.header {
+    width: 100%;
+}
+
+.header2 {
+    display: flex;
+    justify-content: center;
+}
+
+.div_a {
+    height: 100%;
+    width: 20%;
+    position: absolute;
+    padding: 20px;
+    margin: 0;
+    border-bottom: 2px solid #ccc;
+    background-color: #faf4ec;
+}
+
+.div_b {
+    right: 0%;
+    height: 100%;
+    width: 80%;
+    position: absolute;
+    padding: 20px;
+    margin: 0;
+    border-bottom: 2px solid #ccc;
+    background-color: #f3e9de;
+}
+
+.div_c {
+    height: 95%;
+    width: 95%;
+    background-color: #faf4ec;
+    border: 5px solid #6495ed;
+}
+
+.div_0 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.div_1 {
+    position: absolute;
+    top: 17%;
+    width: 96%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.div_2 {
+    position: absolute;
+    top: 28%;
+    width: 100%;
+    height: 35%;
+    display: flex;
+}
+
+.div_3 {
+    position: absolute;
+    top: 64%;
+    width: 96%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.div_4 {
+    position: absolute;
+    bottom: 5%;
+    width: 30%;
+    left: 30%;
+    height: 15%;
+    display: grid;
+    justify-content: center;
+}
+
+.toggle {
+    border: none;
+    border-radius: 1rem;
+}
+
+.toggle2 {
+    width: 100px;
+    height: 40px;
+    color: #f6f6f6;
+    background-color: #56536a;
+}
+
+.toggle3 {
+    width: 100px;
+    height: 40px;
+    color: #f6f6f6;
+    background-color: #375f68;
+}
+
+.toggle4 {
+    width: 65px;
+    height: 40px;
+    color: #f6f6f6;
+    background-color: #375f68;
+    margin: 2px;
+}
+
+.toggle5 {
+    width: 75px;
+    height: 40px;
+    color: #f6f6f6;
+    background-color: #9b332c;
+    margin: 1px;
+
+}
+
+.img1 {
+    position: absolute;
+    bottom: 6%;
+    left: 33%;
+}
+
+.img2 {
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+}
+
+@media (max-width: 600px) {
+    .div_a {
+        display: none;
+    }
+
+    .div_b {
+        width: 100%;
+        left: 0%;
+    }
+}
