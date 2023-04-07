@@ -161,3 +161,7 @@ h2 {
         left: 0%;
     }
 }
+
+.dark-theme {
+    background-color: #181818;
+}
