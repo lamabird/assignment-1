@@ -37,33 +37,9 @@ themeToggle.addEventListener('click', () => {
 
 const divC = document.querySelector('.div_c');
 divC.contentEditable = true;
-
-const cancelBtn = document.querySelector('.toggle5');
-const textarea = document.querySelector('textarea');
-const saveBtn = document.querySelector('.toggle4');
-const div3 = document.querySelector('.div_3');
-
-const cancelButton = document.getElementById('cancel-button');
-const textArea = document.querySelector('.note-textarea');
-const saveButton = document.querySelector('.save-button');
-const newNoteButton = document.querySelector('.new-note-button');
-
-let buttonsVisible = false;
-
-newNoteButton.addEventListener('click', () => {
-    if (!buttonsVisible) {
-        textArea.style.display = 'block';
-        saveButton.style.display = 'block';
-        cancelButton.style.display = 'block';
-        buttonsVisible = true;
-    } else {
-        textArea.value = '';
-        textArea.style.display = 'none';
-        saveButton.style.display = 'none';
-        cancelButton.style.display = 'none';
-        buttonsVisible = false;
-    }
-});
+const textArea = document.querySelector('.div_c');
+const cancelButton = document.querySelector('.toggle5');
+const saveButton = document.querySelector('.toggle4');
 
 cancelButton.addEventListener('click', () => {
     textArea.style.display = 'none';
@@ -71,23 +47,48 @@ cancelButton.addEventListener('click', () => {
     cancelButton.style.display = 'none';
 });
 
-const notesArray = [
-    {title: "note one", body: "this is my first note"},
-    {title: "note two", body: "this is my second note"},
-    {title: "note three", body: "this is my third note"}
-];
+const newNoteButton = document.querySelector('.toggle3');
+newNoteButton.addEventListener('click', () => {
+    const textArea = document.querySelector('.div_c');
 
-const sidebarList = document.querySelector('.sidebar-list');
-
-saveButton.addEventListener('click', () => {
-    const noteTitle = prompt('Enter a title for your note:');
-    if (noteTitle) {
-        const noteBody = textArea.value;
-        const newNote = {title: noteTitle, body: noteBody};
-        notesArray.push(newNote);
-        const newListItem = document.createElement('li');
-        newListItem.textContent = noteTitle;
-        sidebarList.appendChild(newListItem);
+    if (textArea.style.display === 'none') {
+        textArea.style.display = 'block';
+        saveButton.style.display = 'block';
+        cancelButton.style.display = 'block';
         textArea.value = '';
+    } else {
+        textArea.style.display = 'none';
+        saveButton.style.display = 'none';
+        cancelButton.style.display = 'none';
     }
 });
+
+const notesArray = [
+    {title: 'note one', body: 'this is my first note'},
+    {title: 'note two', body: 'this is my second note'}
+];
+
+const saveNoteButton = document.querySelector('.toggle4');
+saveNoteButton.addEventListener('click', () => {
+    const textArea = document.querySelector('.div_c');
+    const title = prompt('Enter the title of the note:');
+    const newNote = {title, body: textArea.value};
+    notesArray.push(newNote);
+
+    const list = document.querySelector('.div_a');
+    const listItem = document.createElement('li');
+    listItem.textContent = title;
+    listItem.dataset.note = JSON.stringify(newNote);
+    list.appendChild(listItem);
+});
+
+const noteList = document.querySelector('.div_a');
+noteList.addEventListener('click', (event) => {
+    const noteData = event.target.dataset.note;
+    if (noteData) {
+        const note = JSON.parse(noteData);
+        const divC = document.querySelector('.div_c');
+        divC.value = note.body;
+    }
+});
+
