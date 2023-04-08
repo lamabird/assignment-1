@@ -32,3 +32,20 @@ themeToggle.addEventListener('click', () => {
         themeToggle.textContent = 'Dark Theme';
     }
 });
+// -----------------------------------------------
+const divC = document.querySelector('.div_c');
+divC.contentEditable = true;
+const cancelBtn = document.querySelector('.toggle5');
+const textarea = document.querySelector('textarea');
+const saveBtn = document.querySelector('.toggle4');
+const div3 = document.querySelector('.div_3');
+const cancelButton = document.getElementById('cancel-button');
+const textArea = document.querySelector('.note-textarea');
+const saveButton = document.querySelector('.save-button');
+cancelButton.addEventListener('click', () => {
+    if (textArea.style.display !== 'none') {
+        textArea.style.display = 'none';
+        saveButton.style.display = 'none';
+        cancelButton.style.display = 'none';
+    }
+});

@@ -165,3 +165,49 @@ h2 {
 .dark-theme {
     background-color: #181818;
 }
+
+.dark-theme .div_a {
+    background-color: #411B32;
+}
+
+.dark-theme p,
+.dark-theme li,
+.dark-theme h1,
+.dark-theme h2 {
+    color: #6BC6FF;
+    z-index: 100;
+}
+
+.dark-theme h1 {
+    background-color: #411B32
+}
+
+.dark-theme .header2 {
+    background-color: #181818
+}
+
+.dark-theme .toggle2 {
+    background-color: #7AA7FF;
+    color: black;
+}
+
+.dark-theme .toggle3 {
+    background-color: #BC8FFF;
+    color: black;
+}
+
+.dark-theme .toggle5 {
+    background-color: #CE9797;
+    color: black;
+}
+
+.dark-theme .toggle4 {
+    background-color: #36BF46;
+    color: black;
+}
+
+.dark-theme .div_c {
+    background-color: #8FBBC1;
+    border-color: #411b32;
+}
+
