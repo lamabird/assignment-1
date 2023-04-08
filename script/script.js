@@ -32,20 +32,62 @@ themeToggle.addEventListener('click', () => {
         themeToggle.textContent = 'Dark Theme';
     }
 });
+
 // -----------------------------------------------
+
 const divC = document.querySelector('.div_c');
 divC.contentEditable = true;
+
 const cancelBtn = document.querySelector('.toggle5');
 const textarea = document.querySelector('textarea');
 const saveBtn = document.querySelector('.toggle4');
 const div3 = document.querySelector('.div_3');
+
 const cancelButton = document.getElementById('cancel-button');
 const textArea = document.querySelector('.note-textarea');
 const saveButton = document.querySelector('.save-button');
-cancelButton.addEventListener('click', () => {
-    if (textArea.style.display !== 'none') {
+const newNoteButton = document.querySelector('.new-note-button');
+
+let buttonsVisible = false;
+
+newNoteButton.addEventListener('click', () => {
+    if (!buttonsVisible) {
+        textArea.style.display = 'block';
+        saveButton.style.display = 'block';
+        cancelButton.style.display = 'block';
+        buttonsVisible = true;
+    } else {
+        textArea.value = '';
         textArea.style.display = 'none';
         saveButton.style.display = 'none';
         cancelButton.style.display = 'none';
+        buttonsVisible = false;
+    }
+});
+
+cancelButton.addEventListener('click', () => {
+    textArea.style.display = 'none';
+    saveButton.style.display = 'none';
+    cancelButton.style.display = 'none';
+});
+
+const notesArray = [
+    {title: "note one", body: "this is my first note"},
+    {title: "note two", body: "this is my second note"},
+    {title: "note three", body: "this is my third note"}
+];
+
+const sidebarList = document.querySelector('.sidebar-list');
+
+saveButton.addEventListener('click', () => {
+    const noteTitle = prompt('Enter a title for your note:');
+    if (noteTitle) {
+        const noteBody = textArea.value;
+        const newNote = {title: noteTitle, body: noteBody};
+        notesArray.push(newNote);
+        const newListItem = document.createElement('li');
+        newListItem.textContent = noteTitle;
+        sidebarList.appendChild(newListItem);
+        textArea.value = '';
     }
 });
